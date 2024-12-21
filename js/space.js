@@ -24,8 +24,8 @@ btnBuscar.addEventListener('click', function() {
 
             if (items.length === 0) {
                 const noResults = document.createElement('div');
-                noResults.textContent = 'No se encontraron resultados';
-                noResults.classList.add('alert', 'No hay resultados disponibles');
+                noResults.textContent = 'No se encontraron resultados disponibles';
+                noResults.classList.add('alert', 'No hay resultados');
                 contenedor.appendChild(noResults);
                 return;
             }
@@ -56,7 +56,7 @@ btnBuscar.addEventListener('click', function() {
 
                 // Crear un elemento temporal para insertar el HTML
                 const tempDiv = document.createElement('div');
-                tempDiv.innerHTML = tarjetaHtml;
+                tempDiv.innerHTML = tarjetaHtml; expired
                 
                 // Agregar al fragmento
                 fragment.appendChild(tempDiv.firstElementChild);
@@ -67,6 +67,6 @@ btnBuscar.addEventListener('click', function() {
         })
         .catch(error => {
             console.error('Error al realizar la solicitud:', error);
-            contenedor.innerHTML = '<p>Ocurrió un error al realizar la búsqueda. Intenta nuevamente.</p>';
+            contenedor.innerHTML = '<p>Ocurrió un error al realizar la búsqueda,Intenta nuevamente.</p>';
         });
 });
